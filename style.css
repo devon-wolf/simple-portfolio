@@ -59,13 +59,19 @@ h1 {
 }
 
 #color-toggle {
-  position: fixed;
+  position: absolute;
   top: 1rem;
   right: 1rem;
+  height: 1.1rem;
+  width: 1.1rem;
+  accent-color: var(--link);
   z-index: 100;
 }
 
-header, article, footer, .section-title {
+header,
+article,
+footer,
+.section-title {
   padding: 1rem;
 }
 
