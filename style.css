@@ -9,6 +9,14 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
 }
 
 /* theme definitions */
@@ -51,14 +59,22 @@ h1 {
 }
 
 #color-toggle {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
+  z-index: 100;
+}
+
+header, article, footer, .section-title {
+  padding: 1rem;
+}
+
+header {
+  width: 100%;
 }
 
 .theme-wrapper {
   min-height: 100vh;
-  padding: 1rem;
   display: grid;
   /* header, main, footer */
   grid-template-rows: min-content 1fr min-content;
@@ -78,12 +94,17 @@ p {
 }
 
 main {
-  border-top: solid 2px var(--accent);
   border-bottom: solid 2px var(--accent);
 }
 
 section {
   display: none;
+}
+
+.section-title {
+  background-color: var(--link);
+  color: var(--bg);
+  border-bottom: solid 2px var(--accent);
 }
 
 :target {
